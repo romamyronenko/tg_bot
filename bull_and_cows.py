@@ -1,3 +1,6 @@
+import random
+
+
 def get_bulls_and_cows(secret: str, guess: str):
     if len(secret) != len(guess):
         raise ValueError("diffeent lenghts")
@@ -22,17 +25,13 @@ def get_bulls_and_cows(secret: str, guess: str):
     return {'bulls': bulls, "cows": cows}
 
 
-"""
-secret: 1234
-guess:  4231
-
-i: 0
-secret_without_bulls: []
-guess_without_bulls: ["4", "1"]
-
-bulls: 2
-cows: 2
-
-"""
+def generate_random_number(length):
+    result = ""
+    for _ in range(5):
+        n = random.randint(0, 9)
+        result += str(n)
+    return result
 
 
+if __name__ == '__main__':
+    print(generate_random_number(5))
